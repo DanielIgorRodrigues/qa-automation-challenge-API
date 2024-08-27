@@ -42,7 +42,7 @@ describe('POST /produtos', () => {
     });
 
     test('Deve retornar status 400 ao tentar cadastrar um produto sem o campo nome', async () => {
-        const produtoInvalido = { ...data.postProduct };
+        const produtoInvalido = { ...data.postProduct }; //separando as propriedades do produto
         delete produtoInvalido.nome; // Remove o campo nome
         const response = await addProduct(token, produtoInvalido);
 
