@@ -1,0 +1,8 @@
+{
+    "NewProduct": {
+        "nome": "Produto para Validacao",
+        "preco": 150,
+        "descricao": "Produto Teste para Validacao no GET",
+        "quantidade": 20
+    }
+}

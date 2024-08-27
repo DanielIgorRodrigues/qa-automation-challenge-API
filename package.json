@@ -1,0 +1,24 @@
+{
+  "name": "qa-automation-challenge-api",
+  "version": "1.0.0",
+  "description": "Repositório criado para o desafio técnico de automação de testes API. Inclui a definição e automação de cenários de teste para a aplicação Serverest, com foco na validação de funcionalidades críticas do sistema. Implementação realizada utilizando práticas recomendadas de automação e documentação clara para execução dos testes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielIgorRodrigues/qa-automation-challenge-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielIgorRodrigues/qa-automation-challenge-API/issues"
+  },
+  "homepage": "https://github.com/DanielIgorRodrigues/qa-automation-challenge-API#readme",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  }
+}
