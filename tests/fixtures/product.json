@@ -1,8 +1,14 @@
 {
-    "NewProduct": {
-        "nome": "Produto para Validacao",
+    "getProduct": {
+        "nome": "Produto para o GET",
         "preco": 150,
         "descricao": "Produto Teste para Validacao no GET",
         "quantidade": 20
+    },
+    "postProduct": {
+        "nome": "Produto POST",
+        "preco": 100,
+        "descricao": "Produto Teste para Validacao no POST",
+        "quantidade": 10
     }
 }

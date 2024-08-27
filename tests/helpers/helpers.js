@@ -1,5 +1,4 @@
 const request = require('supertest');
-const baseUrl = 'https://serverest.dev';
 
 // Função para fazer login e retornar o token de autenticação
 async function login() {
@@ -17,7 +16,7 @@ async function addProduct(token, produto) {
         .set('Authorization', token)
         .send(produto);
 
-    return response.body;
+    return response;
 }
 
 // Função para obter a lista de produtos

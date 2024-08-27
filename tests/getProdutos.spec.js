@@ -1,6 +1,6 @@
 const { login, addProduct, getProduct, deleteProductByID, ensureProducts, findProduct } = require('./helpers/helpers');
 const data = require('./fixtures/product.json');
-jest.setTimeout(30000); // Aumenta o timeout global para 30 segundos
+
 describe('GET /produtos', () => {
   let token;
   let registredProduct;
@@ -9,9 +9,10 @@ describe('GET /produtos', () => {
   beforeAll(async () => {
     token = await login(); // Obtem token para autenticação
 
-    await ensureProducts(token, data.NewProduct); // Exclui qualquer produto previamente cadastrado com os mesmos dados
+    await ensureProducts(token, data.getProduct); // Exclui qualquer produto previamente cadastrado com os mesmos dados
 
-    registredProduct = await addProduct(token, data.NewProduct); // Cadastro do produto usando os dados do JSON
+    registredProduct = await addProduct(token, data.getProduct); // Cadastro do produto usando os dados do JSON
+    registredProduct = registredProduct.body
   });
 
   beforeEach(async () => {
@@ -48,9 +49,9 @@ describe('GET /produtos', () => {
     const productFound = await findProduct(response.body.produtos, registredProduct._id); // Procura no array retornado o produto recém-cadastrado
 
     expect(productFound).toBeDefined(); // Verifica se o produto foi encontrado (deve ser definido)
-    expect(productFound.nome).toBe(data.NewProduct.nome); // Verifica se o nome do produto encontrado corresponde ao nome do produto cadastrado
-    expect(productFound.preco).toBe(data.NewProduct.preco); // Verifica se o preço do produto encontrado corresponde ao preço cadastrado
-    expect(productFound.descricao).toBe(data.NewProduct.descricao); // Verifica se a descrição do produto encontrado corresponde à descrição cadastrada
-    expect(productFound.quantidade).toBe(data.NewProduct.quantidade); // Verifica se a quantidade do produto encontrado corresponde à quantidade cadastrada
+    expect(productFound.nome).toBe(data.getProduct.nome); // Verifica se o nome do produto encontrado corresponde ao nome do produto cadastrado
+    expect(productFound.preco).toBe(data.getProduct.preco); // Verifica se o preço do produto encontrado corresponde ao preço cadastrado
+    expect(productFound.descricao).toBe(data.getProduct.descricao); // Verifica se a descrição do produto encontrado corresponde à descrição cadastrada
+    expect(productFound.quantidade).toBe(data.getProduct.quantidade); // Verifica se a quantidade do produto encontrado corresponde à quantidade cadastrada
   });
 });
