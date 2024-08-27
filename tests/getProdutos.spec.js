@@ -45,12 +45,12 @@ describe('GET /produtos', () => {
   });
 
   test('Deve conter o produto recém-cadastrado na lista de produtos', async () => {
-    const productFinded = await findProduct(response.body.produtos, registredProduct._id); // Procura no array retornado o produto recém-cadastrado
+    const productFound = await findProduct(response.body.produtos, registredProduct._id); // Procura no array retornado o produto recém-cadastrado
 
-    expect(productFinded).toBeDefined(); // Verifica se o produto foi encontrado (deve ser definido)
-    expect(productFinded.nome).toBe(data.NewProduct.nome); // Verifica se o nome do produto encontrado corresponde ao nome do produto cadastrado
-    expect(productFinded.preco).toBe(data.NewProduct.preco); // Verifica se o preço do produto encontrado corresponde ao preço cadastrado
-    expect(productFinded.descricao).toBe(data.NewProduct.descricao); // Verifica se a descrição do produto encontrado corresponde à descrição cadastrada
-    expect(productFinded.quantidade).toBe(data.NewProduct.quantidade); // Verifica se a quantidade do produto encontrado corresponde à quantidade cadastrada
+    expect(productFound).toBeDefined(); // Verifica se o produto foi encontrado (deve ser definido)
+    expect(productFound.nome).toBe(data.NewProduct.nome); // Verifica se o nome do produto encontrado corresponde ao nome do produto cadastrado
+    expect(productFound.preco).toBe(data.NewProduct.preco); // Verifica se o preço do produto encontrado corresponde ao preço cadastrado
+    expect(productFound.descricao).toBe(data.NewProduct.descricao); // Verifica se a descrição do produto encontrado corresponde à descrição cadastrada
+    expect(productFound.quantidade).toBe(data.NewProduct.quantidade); // Verifica se a quantidade do produto encontrado corresponde à quantidade cadastrada
   });
 });
